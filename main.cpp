@@ -2,7 +2,7 @@
 #include "expression.h"
 
 int main(int argc, char **argv)
-{   std::string help = "Calculator\nDescription: Evaluates arithmetic expressions\n"
+{   std::string help = "CLC\nDescription: Evaluates arithmetic expressions\n"
                        "Author: Vipul Kumar\n"
                        "commands:\n\thelp: !help\n\texit: !exit";
 
