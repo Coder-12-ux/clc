@@ -17,8 +17,11 @@ int main(int argc, char **argv)
             std::cout << help << std::endl;
             return 0;
         }
-        if(expression_str == "!exit"){
+
+        if(expression_str == "!exit")
+        {
             std::cout << "Bye!!" << std::endl;
+            return 0;
         }
 
         expression e(expression_str);
