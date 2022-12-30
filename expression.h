@@ -39,8 +39,8 @@ public:
     }
 
     size_t str_len;
-    double result;
-    expression(std::string expr)
+    double result{};
+    explicit expression(const std::string& expr)
     {
         this->str = "(" + expr + ")";
         this->str_len = expr.length() + 2;
@@ -107,6 +107,8 @@ double operate(double a, double b, char op)
         return a * b;
     if (op == '/')
         return a / b;
+    if (op == '%')
+        return fmod(a, b);
     if (op == '^')
         return pow(a, b);
 }
@@ -121,7 +123,7 @@ int op_precedence(char c)
     if (c == '+' || c == '-')
         return 5;
 
-    if (c == '*' || c == '/' || c == 'x')
+    if (c == '*' || c == '/' || c == 'x' || c == '%')
         return 4;
 
     if (c == '^')
@@ -129,4 +131,5 @@ int op_precedence(char c)
 
     if (c == ')')
         return 1;
-};
+    return 0;
+}
