@@ -5,6 +5,9 @@ int main(int argc, char **argv)
 {   std::string help = "CLC\nDescription: Evaluates arithmetic expressions\n"
                        "Author: Vipul Kumar\n"
                        "commands:\n\thelp: !help\n\texit: !exit";
+{
+    if (argc == 1)
+        std::cout << "No arguments" << std::endl;
 
     if (argc >= 2)
     {
